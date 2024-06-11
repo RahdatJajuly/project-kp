@@ -31,7 +31,7 @@ Jika Anda menggunakan XAMPP, untuk PHP dan MySQL sudah menjadi 1 (bundle) di dal
 -   Clone repository ini
 
 ```bash
-$ git clone https://github.com/mrizkimaulidan/inven-bs.git
+$ https://github.com/riomaryono/project-kp.git
 ```
 
 -   Install seluruh packages yang dibutuhkan
