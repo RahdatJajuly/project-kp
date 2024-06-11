@@ -78,7 +78,7 @@ $ composer install
 Contoh:
 
 ```
-NAMA_SEKOLAH="SD Negeri 001 Ciledug"
+NAMA_SEKOLAH="SMK REFORMASI"
 ```
 
 -   Jika sudah, migrate seluruh migrasi dan seeding data
