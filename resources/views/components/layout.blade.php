@@ -30,7 +30,8 @@
 				<form class="form-inline mr-auto">
 					<ul class="navbar-nav mr-3">
 						<li>
-							<a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a>
+							<a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i
+									class="fas fa-bars"></i></a>
 						</li>
 					</ul>
 				</form>
@@ -41,11 +42,13 @@
 							<div class="d-sm-none d-lg-inline-block">Halo, {{ auth()->user()->name }}</div>
 						</a>
 						<div class="dropdown-menu dropdown-menu-right">
-							<div class="dropdown-title">Akun sejak: {{ auth()->user()->diffForHumanDate(auth()->user()->created_at) }}
+							<div class="dropdown-title">Akun sejak:
+								{{ auth()->user()->diffForHumanDate(auth()->user()->created_at) }}
 							</div>
 							@can('mengatur profile')
-							<a href="{{ route('profile.index') }}" class="dropdown-item has-icon"> <i class="fas fa-cog"></i>
-								Pengaturan Profil </a>
+								<a href="{{ route('profile.index') }}" class="dropdown-item has-icon"> <i
+										class="fas fa-cog"></i>
+									Pengaturan Profil </a>
 							@endcan
 							<div class="dropdown-divider"></div>
 							{{--
@@ -69,7 +72,10 @@
 			<div class="main-sidebar">
 				<aside id="sidebar-wrapper">
 					<div class="sidebar-brand">
+						<marquee direction='right'> SMK REFORMASI</marquee>
+						<!--
 						<a href="{{ route('home') }}">{{ config('app.name') }}</a>
+-->
 					</div>
 					<div class="sidebar-brand sidebar-brand-sm">
 						<a href="{{ route('home') }}">{{ substr(config('app.name'), 0, 2) }}</a>
@@ -77,41 +83,50 @@
 					<ul class="sidebar-menu">
 						<li class="menu-header">Dashboard</li>
 						<li class="nav-item dropdown{{ request()->routeIs('home') ? ' active' : '' }}">
-							<a href="{{ route('home') }}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+							<a href="{{ route('home') }}" class="nav-link"><i
+									class="fas fa-fire"></i><span>Dashboard</span></a>
 						</li>
 						<li class="menu-header">Manajemen</li>
 						@can('lihat barang')
-						<li class="nav-item dropdown{{ request()->routeIs('barang.index') ? ' active' : '' }}">
-							<a href="{{ route('barang.index') }}" class="nav-link"><i class="fas fa-boxes-stacked"></i> <span>Data
-									Barang</span></a>
-						</li>
+							<li class="nav-item dropdown{{ request()->routeIs('barang.index') ? ' active' : '' }}">
+								<a href="{{ route('barang.index') }}" class="nav-link"><i class="fas fa-boxes-stacked"></i>
+									<span>Data
+										Barang</span></a>
+							</li>
 						@endcan @can('lihat bos')
-						<li class="nav-item dropdown{{ request()->routeIs('bantuan-dana-operasional.index') ? ' active' : '' }}">
-							<a class="nav-link" href="{{ route('bantuan-dana-operasional.index') }}"><i class="far fa-face-laugh"></i>
-								<span>Data BOS</span></a>
-						</li>
+							<li
+								class="nav-item dropdown{{ request()->routeIs('bantuan-dana-operasional.index') ? ' active' : '' }}">
+								<a class="nav-link" href="{{ route('bantuan-dana-operasional.index') }}"><i
+										class="far fa-face-laugh"></i>
+									<span>Data BOS</span></a>
+							</li>
 						@endcan @can('lihat ruangan')
-						<li class="nav-item dropdown{{ request()->routeIs('ruangan.index') ? ' active' : '' }}">
-							<a href="{{ route('ruangan.index') }}" class="nav-link"><i class="fas fa-map-location-dot"></i> <span>Data
-									Ruangan</span></a>
-						</li>
+							<li class="nav-item dropdown{{ request()->routeIs('ruangan.index') ? ' active' : '' }}">
+								<a href="{{ route('ruangan.index') }}" class="nav-link"><i
+										class="fas fa-map-location-dot"></i> <span>Data
+										Ruangan</span></a>
+							</li>
 						@endcan @can('lihat pengguna')
-						<li class="nav-item dropdown{{ request()->routeIs('pengguna.index') ? ' active' : '' }}">
-							<a href="{{ route('pengguna.index') }}" class="nav-link"><i class="fas fa-users"></i> <span>Data
-									Pengguna</span></a>
-						</li>
+							<li class="nav-item dropdown{{ request()->routeIs('pengguna.index') ? ' active' : '' }}">
+								<a href="{{ route('pengguna.index') }}" class="nav-link"><i class="fas fa-users"></i>
+									<span>Data
+										Pengguna</span></a>
+							</li>
 						@endcan
 						<li class="menu-header">Pengaturan</li>
 						@can('mengatur profile')
-						<li class="nav-item dropdown{{ request()->routeIs('profile.index') ? ' active' : '' }}">
-							<a href="{{ route('profile.index') }}" class="nav-link"><i class="fas fa-cog"></i> <span>Pengaturan
-									Profil</span></a>
-						</li>
+							<li class="nav-item dropdown{{ request()->routeIs('profile.index') ? ' active' : '' }}">
+								<a href="{{ route('profile.index') }}" class="nav-link"><i class="fas fa-cog"></i>
+									<span>Pengaturan
+										Profil</span></a>
+							</li>
 						@endcan @can('lihat peran dan hak akses')
-						<li class="nav-item dropdown{{ request()->routeIs('peran-dan-hak-akses.index') ? ' active' : '' }}">
-							<a href="{{ route('peran-dan-hak-akses.index') }}" class="nav-link"><i class="fas fa-user-shield"></i>
-								<span>Peran & Hak Akses</span></a>
-						</li>
+							<li
+								class="nav-item dropdown{{ request()->routeIs('peran-dan-hak-akses.index') ? ' active' : '' }}">
+								<a href="{{ route('peran-dan-hak-akses.index') }}" class="nav-link"><i
+										class="fas fa-user-shield"></i>
+									<span>Peran & Hak Akses</span></a>
+							</li>
 						@endcan
 					</ul>
 
@@ -168,44 +183,44 @@
 
 	<script>
 		$(document).ready(function () {
-        $(".delete-button").click(function (e) {
-          e.preventDefault();
-          Swal.fire({
-            title: "Hapus?",
-            text: "Data tidak akan bisa dikembalikan!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Ya",
-            cancelButtonText: "Batal",
-            reverseButtons: true,
-          }).then((result) => {
-            if (result.value) {
-              $(this).parent().submit();
-            }
-          });
-        });
+			$(".delete-button").click(function (e) {
+				e.preventDefault();
+				Swal.fire({
+					title: "Hapus?",
+					text: "Data tidak akan bisa dikembalikan!",
+					icon: "warning",
+					showCancelButton: true,
+					confirmButtonColor: "#3085d6",
+					cancelButtonColor: "#d33",
+					confirmButtonText: "Ya",
+					cancelButtonText: "Batal",
+					reverseButtons: true,
+				}).then((result) => {
+					if (result.value) {
+						$(this).parent().submit();
+					}
+				});
+			});
 
-        $(".logout").click(function (e) {
-          e.preventDefault();
-          Swal.fire({
-            title: "Keluar?",
-            text: "Anda akan keluar dari aplikasi!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Ya",
-            cancelButtonText: "Batal",
-            reverseButtons: true,
-          }).then((result) => {
-            if (result.value) {
-              $(this).parent().submit();
-            }
-          });
-        });
-      });
+			$(".logout").click(function (e) {
+				e.preventDefault();
+				Swal.fire({
+					title: "Keluar?",
+					text: "Anda akan keluar dari aplikasi!",
+					icon: "warning",
+					showCancelButton: true,
+					confirmButtonColor: "#3085d6",
+					cancelButtonColor: "#d33",
+					confirmButtonText: "Ya",
+					cancelButtonText: "Batal",
+					reverseButtons: true,
+				}).then((result) => {
+					if (result.value) {
+						$(this).parent().submit();
+					}
+				});
+			});
+		});
 	</script>
 	@stack('modal')
 	@stack('js')
