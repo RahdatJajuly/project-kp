@@ -75,7 +75,7 @@ Staff TU (Tata Usaha)
 
 ```
 Email       : stafftu@mail.com
-Password    : secret
+Password    : admin
 ```
 
 ### Dibuat dengan
